@@ -9,6 +9,7 @@ var articulos = [
     {nombre:"Audifonos", costo: 1700}
 ];
 
+//El método filter () devuelve los valores coincidentes en una matriz de la colección. Verificará todos los valores de la colección y devolverá los valores coincidentes en una matriz.
 var artuculosFiltrados = articulos.filter(function(articulo){
     return articulo.costo <= 500
 });
@@ -16,7 +17,7 @@ var artuculosFiltrados = articulos.filter(function(articulo){
 var nombreArticulos = articulos.map(function(articulo){
     return articulo.nombre
 });
-
+//El método find () devuelve el primer valor que coincide de la colección. Una vez que coincida con el valor en los resultados, no verificará los valores restantes en la colección de matriz.
 var encuentraArticulo = articulos.find(function(articulo){
     return articulo.nombre === "Laptop"
 });
