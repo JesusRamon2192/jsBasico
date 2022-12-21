@@ -20,14 +20,16 @@ class Node {
     constructor(value){
         this.value = value;
         this.next = null;
+        this.prev = null;
     }
 }
 
-class MySinglyLinkedList {
+class MyDoublyLinkedList {
     constructor(value) {
         this.head = {
             value: value,
             next: null,
+            prev: null,
         }
         this.tail = this.head;
 
@@ -35,7 +37,7 @@ class MySinglyLinkedList {
     }
     append(value){
         const newNode = new Node(value);
-
+        newNode.prev = this.tail;
         this.tail.next = newNode;
         this.tail = newNode;
         this.length++;
@@ -45,7 +47,7 @@ class MySinglyLinkedList {
 
     prepent(value){
         const newNode = new Node(value);
-
+        
         newNode.next = this.head;
         this.head = newNode;
 
@@ -95,4 +97,4 @@ class MySinglyLinkedList {
 
 }
 
-let myLinkedList = new MySinglyLinkedList(1);
+let myLinkedList = new MyDoublyLinkedList(1);
