@@ -1,4 +1,4 @@
-1 --> 2 --> 3 --> 4 --> 5 --> null
+/* 1 --> 2 --> 3 --> 4 --> 5 --> null
 
 let singlyLinkedListed = {
     head: {
@@ -14,7 +14,7 @@ let singlyLinkedListed = {
             }
         }
     }
-}
+} */
 
 class Node {
     constructor(value){
@@ -32,6 +32,25 @@ class MySinglyLinkedList {
         this.tail = this.head;
 
         this.length = 1;
+    }
+    append(value){
+        const newNode = new Node(value);
+
+        this.tail.next = newNode;
+        this.tail = newNode;
+        this.length++;
+
+        return this;
+    }
+
+    prevent(value){
+        const newNode = new Node(value);
+
+        newNode.next = this.head;
+        this.head = newNode;
+
+        this.length++;
+        return this;
     }
 
 }
