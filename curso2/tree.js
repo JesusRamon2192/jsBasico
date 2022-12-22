@@ -35,4 +35,22 @@ class BinarySearchTree {
             }
         }
     }
+    search(value){
+        let current = this.root;
+        while(current && current.value != value){
+            if ( value < current.value){
+                current = current.left;
+            } else {
+                current = current.right;
+            }
+        }
+        return current;
+    }
 }
+
+const tree = new BinarySearchTree();
+
+tree.insert(10);
+tree.insert(2);
+tree.insert(4);
+tree.insert(170);
